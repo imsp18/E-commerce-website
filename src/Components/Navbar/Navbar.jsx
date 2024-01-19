@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import './Navbar.css'
 import logo from '../Assets/logo.png'
 import cart_icon from '../Assets/cart_icon.png'
+import { Link } from 'react-router-dom'
 
 const Navbar = () => {
 
@@ -14,10 +15,10 @@ const Navbar = () => {
           <p>SHOPPER</p>
         </div>
         <ul className="nav-menu">
-          <li onClick={()=>(setMenu("shop"))}>Shop{menu === "shop" ? <hr/>: <></>}</li>
-          <li onClick={()=>(setMenu("men"))}>Men{menu === "men" ? <hr/>: <></>}</li>
-          <li onClick={()=>(setMenu("women"))}>Women{menu === "women" ? <hr/>: <></>}</li>
-          <li onClick={()=>(setMenu("kids"))}>Kids{menu === "kids" ? <hr/>: <></>}</li>
+          <li onClick={()=>(setMenu("shop"))}><Link to="/">Shop</Link>{menu === "shop" ? <hr/>: <></>}</li>
+          <li onClick={()=>(setMenu("men"))}><Link to="/mens">Mens</Link>{menu === "men" ? <hr/>: <></>}</li>
+          <li onClick={()=>(setMenu("women"))}><Link to="/womens">Womens</Link>{menu === "women" ? <hr/>: <></>}</li>
+          <li onClick={()=>(setMenu("kids"))}><Link to="/kids">Kids</Link>{menu === "kids" ? <hr/>: <></>}</li>
         </ul>
         <div className="nav-login-cart">
           <button>Login</button>
